@@ -4,12 +4,13 @@ html {
   color: #cecece;
   background-color: #202020;
   font-family: "Open Sans", sans-serif;
-  height: 1300px;
 }
 
 img {
-  max-height: 200px;
   width: auto;
+  max-height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .content {
@@ -20,7 +21,7 @@ img {
 }
 
 .content header {
-  background-color: rgba(0, 0, 0, 0.39);
+  background-color: rgba(27, 27, 27, 0.925);
   font-size: 25px;
   padding: 30px 20px 30px 0;
   text-align: right;
@@ -36,8 +37,8 @@ img {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1fr;
-  -ms-grid-columns: 40% 60%;
-      grid-template: 1fr / 40% 60%;
+  -ms-grid-columns: 40% minmax(10%, 60%);
+      grid-template: 1fr/40% minmax(10%, 60%);
       grid-template-areas: "form section";
 }
 
@@ -45,18 +46,37 @@ img {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: form;
-  display: -ms-grid;
-  display: grid;
-  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10% 2% 10% 2%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.content main form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .content main form label {
+  height: auto;
   font-size: 17px;
-  margin: 10px 0 10px 0;
+  margin: 0 0 12px 0;
 }
 
 .content main form input {
-  padding: 10px;
+  padding: 10px 0 10px 15px;
   border-radius: 5px;
   font-size: 13px;
   background-color: #5a5a5a;
@@ -78,19 +98,56 @@ img {
   color: #c4c4c4;
 }
 
+.content main form .button > input {
+  display: block;
+  width: 50%;
+  color: #111111;
+  background-color: silver;
+}
+
 .content main section {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: section;
   display: -ms-grid;
   display: grid;
-  height: 500px;
   background-color: #5a5a5a;
+  -ms-grid-rows: 1fr 1fr;
+  -ms-grid-columns: (1fr)[2];
+      grid-template: 1fr 1fr/repeat(2, 1fr);
+  grid-gap: 10px 10px;
+  grid-auto-flow: dense;
+}
+
+.content main section div {
+  width: auto;
+  max-height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .content footer {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: footer;
+  background-color: rgba(27, 27, 27, 0.925);
+  padding: 30px 20px 30px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content footer li:not(:first-child) {
+  margin-top: 10px;
+}
+
+.content footer .date {
+  margin-top: 10px;
 }
 /*# sourceMappingURL=style.css.map */

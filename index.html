@@ -19,24 +19,52 @@
         </header>
         <main>
             <form>
-                <label for="name">Введите имя:</label>
-                <input type="text" placeholder="Ваше имя" id="name">
-                <label for="surname">Введите фамилию:</label>
-                <input type="text" placeholder="Ваша фамилия" id="surname">
-                <label for="number">Введите ваш номер телефона:</label>
-                <input type="text" placeholder="8-9__-___-__-__" id="number">
-                <label for="password">Введите пароль:</label>
-                <input type="password" placeholder="Пароль" id="password">
+                <div class="name">
+                    <label for="name">Введите имя:</label>
+                    <input type="text" placeholder="Ваше имя" id="name">
+                </div>
+
+                <div class="surname">
+                    <label for="surname">Введите фамилию:</label>
+                    <input type="text" placeholder="Ваша фамилия" id="surname">
+                </div>
+
+                <div class="number">
+                    <label for="number">Введите ваш номер телефона:</label>
+                    <input type="tel" placeholder="8-9__-___-__-__" id="number" pattern="+7()">
+                </div>
+
+                <div class="password">
+                    <label for="password">Введите пароль:</label>
+                    <input type="password" placeholder="Пароль" id="password">
+                </div>
+                <div class="button">
+                    <input type="submit" value="Отправить" id="submit">
+                </div>
             </form>
             <section class="gallery">
-                <!-- <img src="./img/cat.jpg" alt="cat">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt=""> -->
+                <img src="./img/cat.jpg" alt="cat" class="cat-image">
+                <img src="./img/lake.jpg" alt="lake" class="lake-image">
+                <img src="./img/plane.jpg" alt="plane" class="plane-image">
+                <img src="./img/woman.jpg" alt="woman" class="woman-image">
+                <img src="./img/zebra.jpg" alt="zebra" class="zebra-image">
+                <img src="./img/dog.jpg" alt="dog" class="dog-image">
             </section>
         </main>
-        <footer></footer>
+        <footer>
+            <div class="left">
+                <ul>
+                    <li><label for="name">Имя</label></li>
+                    <li><label for="surname">Фамилия</label></li>
+                    <li><label for="number">Телефон</label></li>
+                    <li><label for="password">Пароль</label></li>
+                </ul>
+            </div>
+            <div class="right">
+                <p>Московский Политех</p>
+                <p class="date">6.03.2021</p>
+            </div>
+        </footer>
     </div>
 </body>
 

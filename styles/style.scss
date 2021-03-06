@@ -1,4 +1,4 @@
-$block-color: rgba(0, 0, 0, 0.39);
+$block-color: rgba(27, 27, 27, 0.925);
 $text-color: rgb(206, 206, 206);
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
@@ -8,12 +8,13 @@ html {
     color: $text-color;
     background-color: rgb(32, 32, 32);
     font-family: "Open Sans", sans-serif;
-    height: 1300px;
+    // height: 1300px;
 }
 
 img {
-    max-height: 200px;
     width: auto;
+    max-height: 200px;
+    object-fit: cover;
 }
 
 .content {
@@ -35,21 +36,29 @@ img {
     main {
         grid-area: main;
         display: grid;
-        grid-template: 1fr / 40% 60%;
+        grid-template: 1fr / 40% minmax(10%, 60%);
         grid-template-areas: "form section";
 
         form {
             grid-area: form;
-            display: grid;
-            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            padding: 10% 2% 10% 2%;
+            justify-content: space-evenly;
+
+            div {
+                display: flex;
+                flex-direction: column;
+            }
 
             label {
+                height: auto;
                 font-size: 17px;
-                margin: 10px 0 10px 0;
+                margin: 0 0 12px 0;
             }
 
             input {
-                padding: 10px;
+                padding: 10px 0 10px 15px;
                 border-radius: 5px;
                 font-size: 13px;
                 background-color: rgb(90, 90, 90);
@@ -57,17 +66,43 @@ img {
             input::placeholder {
                 color: rgb(196, 196, 196);
             }
+            .button > input {
+                display: block;
+                width: 50%;
+                color: rgb(17, 17, 17);
+                background-color: rgb(192, 192, 192);
+            }
         }
 
         section {
             grid-area: section;
             display: grid;
-            height: 500px;
             background-color: rgb(90, 90, 90);
+            grid-template: 1fr 1fr / repeat(2, 1fr);
+            grid-gap: 10px 10px;
+            grid-auto-flow: dense;
+
+            div {
+                width: auto;
+                max-height: 200px;
+                object-fit: cover;
+            }
         }
     }
 
     footer {
         grid-area: footer;
+        background-color: $block-color;
+        padding: 30px 20px 30px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        li:not(:first-child) {
+            margin-top: 10px;
+        }
+        .date {
+            margin-top: 10px;
+        }
     }
 }
