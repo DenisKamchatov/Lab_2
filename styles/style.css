@@ -1,1 +1,96 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+body,
+html {
+  color: #cecece;
+  background-color: #202020;
+  font-family: "Open Sans", sans-serif;
+  height: 1300px;
+}
+
+img {
+  max-height: 200px;
+  width: auto;
+}
+
+.content {
+  display: -ms-grid;
+  display: grid;
+  grid-template: auto 1fr 400px;
+      grid-template-areas: "header" "main" "footer";
+}
+
+.content header {
+  background-color: rgba(0, 0, 0, 0.39);
+  font-size: 25px;
+  padding: 30px 20px 30px 0;
+  text-align: right;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header;
+}
+
+.content main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: main;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr;
+  -ms-grid-columns: 40% 60%;
+      grid-template: 1fr / 40% 60%;
+      grid-template-areas: "form section";
+}
+
+.content main form {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: form;
+  display: -ms-grid;
+  display: grid;
+  padding: 10px;
+}
+
+.content main form label {
+  font-size: 17px;
+  margin: 10px 0 10px 0;
+}
+
+.content main form input {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 13px;
+  background-color: #5a5a5a;
+}
+
+.content main form input::-webkit-input-placeholder {
+  color: #c4c4c4;
+}
+
+.content main form input:-ms-input-placeholder {
+  color: #c4c4c4;
+}
+
+.content main form input::-ms-input-placeholder {
+  color: #c4c4c4;
+}
+
+.content main form input::placeholder {
+  color: #c4c4c4;
+}
+
+.content main section {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: section;
+  display: -ms-grid;
+  display: grid;
+  height: 500px;
+  background-color: #5a5a5a;
+}
+
+.content footer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: footer;
+}
+/*# sourceMappingURL=style.css.map */
